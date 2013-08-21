@@ -1,0 +1,32 @@
+<h1>Add a new Meal</h1>
+
+<%= form_for @meal, :html => {:multipart => true } do |f| %>
+
+<div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+</div>
+
+<div class="field">
+    <%= f.label :image %><br />
+    <%= f.file_field :image %>
+</div>
+
+<div class="field">
+	<%= f.fields_for :cook do |c| %>
+	<%= c.label :cook_name %><br />
+    <%= c.text_field :cook_name %><br />
+
+    <%= c.label :bio %><br />
+    <%= c.text_field :bio %>
+
+<% end %>
+</div>
+
+
+<div class="actions">
+    <%= f.submit %>
+</div>
+
+<% end %>
+
