@@ -1,9 +1,7 @@
 class Meal < ActiveRecord::Base
- attr_accessible :name, :image
+ attr_accessible :name, :image, :cook_attributes
  mount_uploader :image, ImageUploader
  has_one :cook
  accepts_nested_attributes_for :cook 
  
- 
-
-end
+ end

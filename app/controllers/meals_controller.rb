@@ -13,6 +13,7 @@ class MealsController < ApplicationController
 
   def new
   	@meal = Meal.new
+    @meal.build_cook
   end
 
   def create

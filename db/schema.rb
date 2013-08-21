@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(:version => 20130820132313) do
   create_table "cooks", :force => true do |t|
     t.string   "cook_name"
     t.text     "bio"
+    t.integer  "meal_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
