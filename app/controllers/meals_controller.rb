@@ -7,6 +7,20 @@ class MealsController < ApplicationController
     @meal = Meal.find(params[:id])
   end
 
+  def search 
+      #@search = Meal.where("name like?", "%#{params[:meal][:name]}%")
+      #@restaurant = Restaurant.where("name like?", "%#{params[:meal][:name]}%")
+
+      @search = Meal.tagged_with(params[:meal][:name])
+      @restaurant = Restaurant.tagged_with(params[:meal][:name])
+  end
+
+
+  def search_form
+    @search = Meal.new
+  end
+
+
   def display
   	@meal = Meal.all
   end
@@ -28,5 +42,6 @@ class MealsController < ApplicationController
 
    end
 
+ 
 end
 

@@ -1,0 +1,16 @@
+
+
+<h2>Meal</h2>
+<% @search.each do |meal| %>
+<h4><%= meal.name %></h4>
+
+<%= image_tag meal.image_url.to_s %><br />
+
+<% end %>
+
+<h2>Restaurants</h2>
+<% @restaurant.each do |r| %>
+<h4><%= r.name %></h4>
+
+<% end %>
+

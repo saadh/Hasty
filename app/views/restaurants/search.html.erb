@@ -1,0 +1,11 @@
+
+<h2>Okay, here's what I found</h2>
+
+<% @search.each do |rest| %>
+<strong>Restaurant: </strong><%= rest.name %><br />
+<strong>Postcode: </strong><%= rest.postcode %><br />
+<strong>Type of Food: </strong><%= rest.cuisine %><br />
+
+
+<% end %>
+

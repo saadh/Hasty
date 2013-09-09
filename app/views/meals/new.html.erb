@@ -1,5 +1,17 @@
 <h1>Add a new Meal</h1>
 
+<% if @meal.errors.any? %>
+  <div id="errorExplanation">
+    <h2><%= pluralize(@meal.errors.count, "error") %> prohibited
+      this post from being saved:</h2>
+    <ul>
+    <% @meal.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+
 <%= form_for @meal, :html => {:multipart => true } do |f| %>
 
 <div class="field">
@@ -11,6 +23,12 @@
     <%= f.label :image %><br />
     <%= f.file_field :image %>
 </div>
+<br/>
+<div class="field">
+  <%= f.label :tag_list, "Tags(separated by commas)" %><br />
+  <%= f.text_field :tag_list %>
+</div>
+
 
 <div class="field">
 	<%= f.fields_for :cook do |c| %>

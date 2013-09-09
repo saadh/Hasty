@@ -5,6 +5,20 @@ Links to other pages<br />
 
 <li><%= link_to "Display", display_path %></li>
 <li><%= link_to "Add New Meal", new_path %></li>
+<li><%= link_to "Subscribe", subscribe_path %></li>
+<li><%= link_to "Add New Restaurant", restaurants_new_path %></li>
+<br/>
+<%= check_box_tag(:pet_dog) %>
+<%= label_tag(:pet_dog, "I own a dog") %>
+<%= check_box_tag(:pet_cat) %>
+<%= label_tag(:pet_cat, "I own a cat") %>
+<br />
+<br />
+
+<%= radio_button_tag(:age, "child") %>
+<%= label_tag(:age_child, "I am younger than 21") %>
+<%= radio_button_tag(:age, "adult") %>
+<%= label_tag(:age_adult, "I'm over 21") %>
 
 </ul>
 

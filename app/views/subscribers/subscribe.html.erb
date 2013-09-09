@@ -1,0 +1,43 @@
+
+<center><h1>Hello and welcome to Hasty</h2></center>
+
+<center>Hungry? Tired? and don't feel like cooking? Join the club! If you've looked hard enough you'll know that it's nearly impossible to find a delicious healthy meal that you can order online and have delivered to you. It just doesn't make sense that online ordering for food doesn't go much beyond fast, junk-food. To restore this imbalance Crave will find the healthiest meals around and deliver them to your door. Just ask!
+
+We're currently in development mode so do sign up now to get exlcusive access as one of our beta users. Please enter your email address, the name of your favourite restaurant/cafe from which you would like food delivered, and your post code. We'll keep you updated on where we are and when we launch in your city. </center>
+
+<br /><br />
+
+<div class="image" align="middle"> 
+<%= image_tag "crave_logo.jpg" %><br />
+</div>
+
+<br />
+<%= form_for @subscriber do |f| %>
+
+<div class="field" align="center">
+	<%= f.label :restaurant, "What restaurant do you wish had a delivery service?" %><br />
+	<%= f.text_field :restaurant %><br />
+</div>
+
+<div class="field" align="center">
+	<%= f.label :email, "Email" %><br />
+	<%= f.text_field :email %><br />
+</div>
+
+<div class="field" align="center">
+	<%= f.label :postcode, "Post code" %><br />
+	<%= f.text_field :postcode %><br />
+</div>
+
+<br />
+
+<div class="actions" align="center">
+	<%= f.submit "Sign me up!" %>
+</div>
+
+<% end %>
+
+
+
+
+

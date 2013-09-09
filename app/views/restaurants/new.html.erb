@@ -1,0 +1,36 @@
+<h1>Add a new Restaurant</h1>
+
+<%= form_for @restaurant do |f| %>
+
+<div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+</div>
+
+<div class="field">
+	<%= f.label :cuisine %><br />
+    <%= f.text_field :cuisine %>
+
+</div>
+
+<div class="field">
+	<%= f.label :city %><br />
+    <%= f.text_field :city %>
+
+</div>
+
+<div class="field">
+	<%= f.label :postcode %><br />
+	<%= f.text_field :postcode %>
+</div>
+
+<div class="field">
+  <%= f.label :tag_list, "Tags(separated by commas)" %><br />
+  <%= f.text_field :tag_list %>
+</div>
+
+<div class="actions">
+    <%= f.submit %>
+</div>
+
+<% end %>

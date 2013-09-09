@@ -2,8 +2,9 @@
 
 <% @meal.each do |g| %>
 
-<%= g.name %><br />
+<strong>Meal:</strong><%= g.name %><br />
 <%= image_tag g.image_url.to_s %><br />
+<strong>Cook:</strong><%= g.cook.cook_name if g.cook %><br /><br />
 
 <% end %>
 

@@ -1,0 +1,15 @@
+<h1>Search a Meal</h1>
+
+<%= form_for @search, :url => search_meals_path do |f| %>
+
+<div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+</div>
+
+<div class="actions">
+    <%= f.submit "Search" %>
+</div>
+
+<% end %>
+

@@ -1,10 +1,24 @@
 Hasty::Application.routes.draw do
 
-  resources :meals 
+  get "restaurants/new"
+  
+
+  resources :meals do 
+  get "search_form", :on => :collection
+  post "search", :on => :collection
+  end
+
+  resources :restaurants do 
+  get "search_form", :on => :collection
+  post "search", :on => :collection
+  end
+  
+  resources :subscribers
 
   match '/display', :to => 'meals#display'
   match '/new', :to => 'meals#new'
-  match '/index', :to => 'meals#index'
+  match '/subscribe', :to => "subscribers#subscribe" 
+  
 
 
   # The priority is based upon order of creation:

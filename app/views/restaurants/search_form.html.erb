@@ -1,0 +1,15 @@
+<h1>Find Restaurants in a post code</h1>
+
+<%= form_for @search, :url => search_restaurants_path do |f| %>
+
+<div class="field">
+    <%= f.label :postcode %><br />
+    <%= f.text_field :postcode %>
+</div>
+
+<div class="actions">
+    <%= f.submit "Search" %>
+</div>
+
+<% end %>
+

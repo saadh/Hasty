@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130820132313) do
+ActiveRecord::Schema.define(:version => 20130907140100) do
 
   create_table "cooks", :force => true do |t|
     t.string   "cook_name"
@@ -26,6 +26,40 @@ ActiveRecord::Schema.define(:version => 20130820132313) do
     t.datetime "updated_at", :null => false
     t.string   "name"
     t.string   "image"
+  end
+
+  create_table "restaurants", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "name"
+    t.string   "postcode"
+    t.string   "cuisine"
+    t.string   "city"
+  end
+
+  create_table "subscribers", :force => true do |t|
+    t.string   "email"
+    t.string   "restaurant"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "postcode"
+  end
+
+  create_table "taggings", :force => true do |t|
+    t.integer  "tag_id"
+    t.integer  "taggable_id"
+    t.string   "taggable_type"
+    t.integer  "tagger_id"
+    t.string   "tagger_type"
+    t.string   "context",       :limit => 128
+    t.datetime "created_at"
+  end
+
+  add_index "taggings", ["tag_id"], :name => "index_taggings_on_tag_id"
+  add_index "taggings", ["taggable_id", "taggable_type", "context"], :name => "index_taggings_on_taggable_id_and_taggable_type_and_context"
+
+  create_table "tags", :force => true do |t|
+    t.string "name"
   end
 
 end

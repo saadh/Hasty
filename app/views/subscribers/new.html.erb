@@ -1,0 +1,34 @@
+
+Hello and welcome to Hasty 
+
+In order to get updates on when we launch please enter your email address, the name of your favorite restaurant or cafe from which you would like food delivered and your post code. Thank you!
+
+<%= form_for @subscriber, :html => {:multipart => true } do |f| %>
+
+<div class="field">
+	<%= f.label :restaurant, "Favorite Restaurant" %><br />
+	<%= f.text_field :restaurant %><br />
+</div>
+
+<div class="field">
+	<%= f.label :email %><br />
+	<%= f.text_field :email %><br />
+</div>
+
+<div class="field">
+	<%= f.label :postcode %><br />
+	<%= f.text_field :postcode %><br />
+</div>
+
+<br />
+
+<div class="actions">
+	<%= f.submit %>
+</div>
+
+<% end %>
+
+
+
+
+
